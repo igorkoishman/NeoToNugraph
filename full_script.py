@@ -44,7 +44,7 @@ def stream_output(process, name):
 
 def run_pre_script():
     print(f"Running pre-script: postgressdb_insertion")
-    result = subprocess.run(["python", "postgressdb_insertion.py"])
+    result = subprocess.run(["python", "postgressdb_insertion.py","/Volumes/work/bnmd_all.json"])
     if result.returncode != 0:
         raise RuntimeError(f"Pre-script postgressdb_insertion2.py failed with code {result.returncode}")
     print(f"Pre-script postgressdb_insertion2.py finished successfully.")

@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_USER: igorkoishman
       POSTGRES_PASSWORD: igor1989
-      POSTGRES_DB: graphdb2
+      POSTGRES_DB: graphdb
     ports:
       - "5432:5432"
     volumes:

@@ -1,3 +1,4 @@
+import argparse
 import json
 import time
 import psycopg2
@@ -148,5 +149,8 @@ def insert_data(path, total_records=None):
 
 
 if __name__ == "__main__":
-    total_lines = count_lines(INPUT_FILE)
-    insert_data(INPUT_FILE, total_lines)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input_file", help="Path to the input JSON file")
+    args = parser.parse_args()
+    total_lines = count_lines(args.input_file)
+    insert_data(args.input_file, total_lines)
