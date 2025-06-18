@@ -7,11 +7,12 @@ services:
     environment:
       POSTGRES_USER: igorkoishman
       POSTGRES_PASSWORD: igor1989
-      POSTGRES_DB: graphdb
+      POSTGRES_DB: graphdb2
     ports:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+      - ./init-db:/docker-entrypoint-initdb.d  # init scripts folder
 
 volumes:
   pgdata:

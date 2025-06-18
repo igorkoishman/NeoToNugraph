@@ -1,5 +1,7 @@
+from dataclasses import dataclass
 from typing import Callable, Any
 
+@dataclass
 class Property:
     def __init__(self, name: str, type_of: str, id_: int, getter: Callable[['EnrichedBrowseNode'], Any]):
         self.name = name

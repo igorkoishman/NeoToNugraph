@@ -126,10 +126,10 @@
   "graphIndices": {
     "compositeIndices": [
       {
-        "indexName": "browse_node_by_node_id_unique",
+        "indexName": "guid_unique",
         "elementType": "vertex",
         "propertyKeys": [
-          "brws_node_id"
+          "guid"
         ],
         "unique": true
       },
