@@ -1,3 +1,5 @@
+from typing import Callable, Any
+
 class Property:
     def __init__(self, name: str, type_of: str, id_: int, getter: Callable[['EnrichedBrowseNode'], Any]):
         self.name = name

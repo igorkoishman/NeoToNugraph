@@ -4,21 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="869f4642-0cfe-4fc8-ae94-3f7d3f99183f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/NeoToNugraph.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/__init_.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/enrichedBrowseNode.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/property.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nodes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nugraph/schema.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nugraph_file_generator.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/postgressdb_insertion.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relationship.json" afterDir="false" />
+    <list default="true" id="869f4642-0cfe-4fc8-ae94-3f7d3f99183f" name="Changes" comment="ignore">
+      <change afterPath="$PROJECT_DIR$/model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/node.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/relationship.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/__init_.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/enrichedBrowseNode.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/enriched_Browse_Node.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/property.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/property.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nugraph_file_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/nugraph_file_generator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,31 +155,46 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1750156854992</updated>
-      <workItem from="1750156856031" duration="15089000" />
+      <workItem from="1750156856031" duration="21804000" />
     </task>
+    <task id="LOCAL-00001" summary="ignore">
+      <option name="closed" value="true" />
+      <created>1750234744027</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1750234744027</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/nugraph_file_generator.py</url>
-          <line>88</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/nugraph_file_generator.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="10" />
+          <line>150</line>
+          <option name="timeStamp" value="40" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NeoToNugraph$app.coverage" NAME="app Coverage Results" MODIFIED="1750157983879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NeoToNugraph$nugraph_file_generator.coverage" NAME="nugraph_file_generator Coverage Results" MODIFIED="1750168056407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NeoToNugraph$nugraph_file_generator.coverage" NAME="nugraph_file_generator Coverage Results" MODIFIED="1750241286914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
