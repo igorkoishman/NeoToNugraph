@@ -1,0 +1,148 @@
+{
+  "vertexLabels": [
+    {
+      "name": "BuyerMetadataEntity"
+    },
+    {
+      "name": "ExternalMetadataEntity"
+    },
+    {
+      "name": "RuleEntity"
+    },
+    {
+      "name": "TokenEntity"
+    },
+    {
+      "name": "GroupEntity"
+    },
+    {
+      "name": "Operator"
+    }
+  ],
+  "edgeLabels": [
+    {
+      "name": "HAS",
+      "directed": true,
+      "multiplicity": "MULTI"
+    },
+    {
+      "name": "HIERARCHY_RELATION",
+      "directed": true,
+      "multiplicity": "MULTI"
+    },
+    {
+      "name": "DERIVED_CHILD",
+      "directed": true,
+      "multiplicity": "MULTI"
+    },
+    {
+      "name": "METADATA_RELATION",
+      "directed": true,
+      "multiplicity": "MULTI"
+    },
+    {
+      "name": "REPRESENTED_BY",
+      "directed": true,
+      "multiplicity": "MULTI"
+    },
+    {
+      "name": "RESULT",
+      "directed": true,
+      "multiplicity": "MULTI"
+    },
+    {
+      "name": "TOKEN_RELATION",
+      "directed": true,
+      "multiplicity": "MULTI"
+    }
+  ],
+  "propertyKeys": [
+    {
+      "name": "categoryFriendlyName",
+      "dataType": "string",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "creationTimestamp",
+      "dataType": "long",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "modificationTimestamp",
+      "dataType": "long",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "deleted",
+      "dataType": "boolean",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "enabled",
+      "dataType": "boolean",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "hidden",
+      "dataType": "boolean",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "guid",
+      "dataType": "string",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "modificationTimestamp",
+      "dataType": "long",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "name",
+      "dataType": "string",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "normalizedValue",
+      "dataType": "string",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "value",
+      "dataType": "string",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "type",
+      "dataType": "string",
+      "cardinality": "SINGLE"
+    },
+    {
+      "name": "id",
+      "dataType": "Long",
+      "cardinality": "SINGLE"
+    }
+  ],
+  "graphIndices": {
+    "compositeIndices": [
+      {
+        "indexName": "browse_node_by_node_id_unique",
+        "elementType": "vertex",
+        "propertyKeys": [
+          "brws_node_id"
+        ],
+        "unique": true
+      },
+      {
+        "indexName": "browse_node_by_category_id",
+        "elementType": "vertex",
+        "propertyKeys": [
+          "categ_id"
+        ],
+        "unique": false
+      }
+    ],
+    "mixedIndices": []
+  },
+  "vertexCentricIndices": []
+}
