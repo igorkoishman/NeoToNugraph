@@ -93,11 +93,6 @@
       "cardinality": "SINGLE"
     },
     {
-      "name": "modificationTimestamp",
-      "dataType": "long",
-      "cardinality": "SINGLE"
-    },
-    {
       "name": "name",
       "dataType": "string",
       "cardinality": "SINGLE"
@@ -134,10 +129,10 @@
         "unique": true
       },
       {
-        "indexName": "browse_node_by_category_id",
+        "indexName": "value_id",
         "elementType": "vertex",
         "propertyKeys": [
-          "categ_id"
+          "value"
         ],
         "unique": false
       }
