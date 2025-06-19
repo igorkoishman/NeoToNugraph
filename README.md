@@ -4,17 +4,6 @@ This project ingests a large `.json` file containing `node` and `relationship` d
 
 ---
 
-## 📦 Project Structure
-
-.
-├── postgressdb_insertion.py # Main ETL processor
-├── create_nugraph_edge_and_vertex.py # Launches both edge and vertex exporters
-├── nugraph_edge_file_generator.py # Generates edge CSV
-├── nugraph_vertext_file_generator.py # Generates vertex CSV
-├── docker/ # Contains docker-compose + init scripts
-├── utils/ # Utility code
-└── README.md
-
 ## Run ETL Script
 python full_script.py /path/to/input.json
 
