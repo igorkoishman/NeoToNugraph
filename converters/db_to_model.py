@@ -1,11 +1,11 @@
-import urllib
+from urllib.parse import quote
 
 from utils.db_utils.db_util import property_map
 
 
 def convert_relationship_to_row(relationship):
     edge_id = f"{relationship.start_properties.get('guid')}-{relationship.label}->{relationship.end_properties.get('guid')}"
-    encoded_edge_id = urllib.parse.quote(edge_id, safe='')
+    encoded_edge_id = quote(edge_id, safe='')
 
     return {
         "edge_id": edge_id,
