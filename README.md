@@ -15,15 +15,16 @@ This project ingests a large `.json` file containing `node` and `relationship` d
 ├── utils/ # Utility code
 └── README.md
 
-Run ETL Script
-python postgressdb_insertion.py /path/to/input.json
+## Run ETL Script
+python full_script.py /path/to/input.json
 
-json file from neo should contains 
+## json file from neo should contains 
+```
 {"type": "node", "id": "n1", "labels": ["Entity"], "properties": {"guid": "123", "name": "Example"}}
 {"type": "relationship", "id": "r1", "label": "LINKS", "start": {"id": "n1", "properties": {}}, "end": {"id": "n2", "properties": {}}}
+```
+## final  files will be 
 
-final  files will be 
+** vertex.csv: contains flattened node properties
 
-vertex.csv: contains flattened node properties
-
-edge.csv: contains encoded relationship info
+** edge.csv: contains encoded relationship info
