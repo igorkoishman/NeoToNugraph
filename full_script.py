@@ -1,4 +1,6 @@
+import argparse
 import subprocess
+import sys
 import threading
 import time
 
@@ -42,12 +44,12 @@ def stream_output(process, name):
         if line:
             print(f"[{name}] {line.decode().strip()}")
 
-def run_pre_script():
-    print(f"Running pre-script: postgressdb_insertion")
-    result = subprocess.run(["python", "postgressdb_insertion.py","/Volumes/work/bnmd_all.json"])
+def run_pre_script(input_file):
+    print(f"Running pre-script: postgressdb_insertion.py with file {input_file}")
+    result = subprocess.run(["python", "postgressdb_insertion.py", input_file])
     if result.returncode != 0:
-        raise RuntimeError(f"Pre-script postgressdb_insertion2.py failed with code {result.returncode}")
-    print(f"Pre-script postgressdb_insertion2.py finished successfully.")
+        raise RuntimeError(f"Pre-script postgressdb_insertion.py failed with code {result.returncode}")
+    print("Pre-script finished successfully.")
 
 def run_parallel_scripts():
     # Start both processes
@@ -84,19 +86,24 @@ def run_parallel_scripts():
     print("Both scripts finished.")
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Full ETL script runner")
+    parser.add_argument("input_file", help="Path to the input JSON file")
+    args = parser.parse_args()
+
     if not check_db_exists(DB_PARAMS, max_retries=3, delay=5):
         run_docker_compose()
-        # After starting docker-compose, wait more for DB
         if not check_db_exists(DB_PARAMS, max_retries=10, delay=5):
-            print("Error: Database still not accessible after starting docker-compose.")
+            print("❌ Database still not accessible after starting docker.")
+            sys.exit(1)
         else:
-            print("Database is now accessible.")
+            print("✅ Database is now accessible.")
     else:
-        print("Database already accessible. No action needed.")
+        print("✅ Database already accessible.")
+
     try:
-        run_pre_script()  # <-- replace with your pre script path
+        run_pre_script(args.input_file)
     except Exception as e:
-        print(f"Aborting because pre-script failed: {e}")
-        exit(1)
+        print(f"❌ Aborting because pre-script failed: {e}")
+        sys.exit(1)
 
     run_parallel_scripts()
