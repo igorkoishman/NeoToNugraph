@@ -10,3 +10,6 @@ class Node:
 
     def get_property(self, key):
         return self.properties.get(key, None)
+
+    def add_label_property(self, label: str, value: Any) -> None:
+        self.properties[label] = value

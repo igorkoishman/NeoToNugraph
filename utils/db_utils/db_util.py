@@ -15,6 +15,7 @@ properties_list = [
     Property("enabled", "Boolean", 6, lambda node: node.get_property("enabled")),
     Property("hidden", "Boolean", 6, lambda node: node.get_property("hidden")),
     Property("guid", "String", 1, lambda node: node.get_property("guid")),
+    Property("managedProp", "String", 1, lambda node: node.get_property("managedProp")),
     Property("name", "String", 1, lambda node: node.get_property("name")),
 Property("normalizedValue", "String", 1, lambda node: node.get_property("normalizedValue")),
 Property("value", "String", 1, lambda node: node.get_property("value")),
@@ -45,14 +46,22 @@ def handle_bulk_relationships(rows):
         batch_relations.append(relation)
     return batch_relations
 
-def handle_vertex_bulk(rows):
+def handle_vertex_bulk(mapper,rows):
     batch_nodes = []
     for row in rows:
-        main_label = get_main_label(row[1])
+        mapping = mapper.get_mapping(row[1])
+        main_label = mapping.get("label")
+        managed_prop = mapping.get("managedProp")
+
+        properties = dict(row[2])  # Make a copy to avoid modifying shared reference
+
+        if managed_prop is not None:
+            properties["managedProp"] = managed_prop
+
         node = Node(
             id=row[0],
             label=main_label,
-            properties=row[2]
+            properties=properties
         )
         batch_nodes.append(node)
     return batch_nodes

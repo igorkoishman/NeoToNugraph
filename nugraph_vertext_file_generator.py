@@ -6,6 +6,7 @@ import psycopg2
 
 from converters.db_to_model import convert_node_to_dict
 from model import Property, Node
+from utils.LabelMapper import LabelMapper
 from utils.db_utils.db_util import get_total_node_count, handle_vertex_bulk, vertex_batch_size, DB_PARAMS
 from utils.format.monitoring import print_vertex_process
 
@@ -25,13 +26,13 @@ def fetch_nodes_from_postgres(batch_size):
     total_nodes = get_total_node_count(meta_cursor)
     meta_cursor.close()
     processed_nodes = 0
-
+    mapper = LabelMapper()
     while True:
         rows = cursor.fetchmany(batch_size)
         if not rows:
             break
 
-        batch_nodes = handle_vertex_bulk(rows)
+        batch_nodes = handle_vertex_bulk(mapper,rows)
         processed_nodes += len(batch_nodes)
         yield batch_nodes, processed_nodes, total_nodes
 
